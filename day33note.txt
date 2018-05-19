@@ -1,0 +1,57 @@
+git：
+	http://www.runoob.com/git/git-tutorial.html
+
+	Git是一个开源的分布式版本控制系统
+	不必服务器端软件支持
+
+	下载安装，全局配置：
+		git config --global user.name "runoob"
+		git config --global user.email test@runoob.com
+
+	概念：
+		工作区：就是你在电脑里能看到的目录。
+		暂存区：英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+		版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库
+
+	使用：
+		a. git init -- 初始化版本库
+		b. 
+			git status -- 查看版本库状态
+			git add <file> -- 将指定文件添加到暂存区
+			git commit -m "message" -- 将暂存区中数据提交到版本库
+			git log -- 查看提交日志
+		c. 分支：
+			列出所有分支：git branch
+			创建分支：git branch <branch-name>
+			切换分支：git checkout <branch-name>
+			合并分支：git merge <branch-name>
+			删除分支：git branch -d <branch-name>
+		d. 远程仓库
+			https://github.com/
+			github是一个基于git的代码托管平台
+			免费用户只能使用公共仓库，也就是代码要公开。
+
+			1. 注册、登录
+			2. 生成 SSH Key(认证)：
+				ssh-keygen -t rsa -C "youremail@example.com"
+			3. 将本地生成的后缀为 .pub 的文件中内容复制到 github 的 ssh key 配置中
+			4. 验证是否配置成功：
+				ssh -T git@github.com
+
+			5. 创建远程版本库
+			6. 将本地版本库推送到远程仓库中
+				git remote add origin git@github.com:itrainhub/h51802_test.git
+				git push -u origin master
+
+	流程：
+		a. 如果本地没有版本库，克隆版本库
+			git clone 版本库URL
+		   如果本地已有版本库，更新：
+		   	git pull
+		b. 在工作空间中实现编码
+		c. 通常在完成一个功能并通过测试后，提交本地版本库
+			git add .
+			git commit -m "message"
+		d. 推送到远程仓库
+			git push
+
