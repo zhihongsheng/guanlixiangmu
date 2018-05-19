@@ -1,0 +1,5 @@
+login 登陆
+register注册
+cart购物车
+list 商品列表
+detail 商品详情
